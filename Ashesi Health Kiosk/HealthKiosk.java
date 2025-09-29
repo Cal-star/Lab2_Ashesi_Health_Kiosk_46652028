@@ -155,10 +155,15 @@ public class HealthKiosk{
         System.out.println("Display Code: " + displayCode);
 
         // Task 5
-        if (!service.equals( "Triage")){
-        System.out.println(service + " | ID = " + shortCode + " | Code = " +  displayCode);
-        } else{
-            System.out.println(service + " | ID = " + shortCode + " | Code = " +  displayCode + " | " + choice + " " + metricResult);
+        switch(service){
+            case "Pharmacy":
+            case "Lab":
+            case "Counseling":
+                System.out.println(service + " | ID = " + shortCode + " | Code = " +  displayCode);
+                break;
+            case "Triage":
+                System.out.println(service + " | ID = " + shortCode + " | Code = " +  displayCode + " | " + choice + " " + metricResult);
+                break;
 
         }
        
